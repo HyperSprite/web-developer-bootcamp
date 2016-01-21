@@ -1,0 +1,14 @@
+/*-mdl-test-1.css*/
+
+.mdl-gridN {
+ margin: auto;
+}
+
+.demo-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+}
+
+.mdl-navigation__link>button {
+  width: 150px;
+} 

@@ -1,0 +1,43 @@
+<!-- lecture63.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Bootstrap</title>
+  <!-- Bootstrap -  Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Bootstrap - Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="lecture62.css">
+</head>
+
+<body>
+ 
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 col-sm-6 col-xsm-12">Col 1</div>
+    <div class="col-md-3 col-sm-6 col-xsm-12">Col 2</div>
+    <div class="col-md-3 col-sm-6 col-xsm-12">Col 3</div>
+    <div class="col-md-3 col-sm-6 col-xsm-12">Col 4</div>
+  </div>
+</div>
+
+<h2>Grid system notes:</h2>
+<p>Bootstrap Grid system is part of the <a href="http://getbootstrap.com/css/#grid" target="blank">CSS</a> section. A container is 12 columns wide. When the screen shrinks, the containers get physically narrower. For example, a lg screen might have 200px wide columns, while a mobile device might have 20px wide columns. so if all we have are <em>Large</em></p>
+
+
+
+<p>So, on a large screen, how many columns will it take to display the content correctly? 2, 3 maybe 4? Ok, so col-lg-? can be one of those. Now lets shrink the screen size, now how many will it take for your content to be acceptable? lets try doubling whatever size we had as a good starting point. So if we had 2, lets go 4 for col-md-?</p>
+<p>Remember, you always have 12 columns, it is just how wide those 12 colums are.</p>
+
+<!-- Javascript down here -->
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<!-- Bootstrap - Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+</body>
+
+
+</html>

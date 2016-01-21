@@ -1,0 +1,40 @@
+body {
+  font-size: 10px;
+  font-family: Open+Sans+Condensed;
+}
+p {
+  font-family: Arial;
+  font-size: 2em;
+  line-height: 1.5;
+  text-align: right;
+}
+#this-is-1 {
+  font-size: 2em;
+  font-weight: lighter;
+  text-decoration: underline;
+}
+
+#this-is-2 {
+  font-size: .5em;
+  font-weight: bold;
+  text-decoration: line-through;
+}
+
+#this-is-3 {
+  font-family: Play;
+}
+
+#this-is-4 {
+  font-family: Abel;
+}
+
+h1 {
+  font-family: "Georgia";
+  text-align: right;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+

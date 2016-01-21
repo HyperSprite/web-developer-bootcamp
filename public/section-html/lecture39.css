@@ -1,0 +1,13 @@
+body {
+  background: #eeeeee;
+}
+li {
+  border: 2px solid red;
+}
+#third-li {
+  color: blue;
+  background-color: yellow;
+}
+.completed {
+  text-decoration: line-through;
+}

@@ -1,0 +1,39 @@
+/* Element - selects by name*/
+li {
+  color: #4444ff;
+}
+
+/*Class - selects by class*/
+.my-class {
+  border: 5px, solid, #000022;
+}
+
+/*Id - selects by id*/
+#my-id {
+  background-color: #001100;
+}
+
+/*Star - selects every element on the page*/
+* {
+  text-decoration: underline;
+}
+
+/*Decendnet Selector - selects tag inside of a parent tag*/
+li a {
+  color: #005500;
+}
+
+/*Ajacent Selector - selects the next sibling at same level*/
+h4 + ul {
+  border: 4px solid #ff0000;
+}
+
+/*Attribute Selector - selects elements with an attribute*/
+a[href="http://www.google.com"] {
+  background-color: #990011;
+}
+
+nth of type - selects the third element (and every third element)
+li:nth-of-type(3) {
+  background: #ffff00;
+}

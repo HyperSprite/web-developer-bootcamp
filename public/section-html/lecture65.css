@@ -1,0 +1,46 @@
+/*lecture65.css*/
+
+body {
+  padding-top: 70px;
+}
+
+.navbar-inverse {
+  background: #2c3e50;
+}
+
+.jumbotron {
+  color: #2c3e50;
+  background-color: #ecf0f1;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: #ecf0f1;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #ecf0f1;
+}
+/*DARK BLUE: #2c3e50
+LIGHT GRAY: #ecf0f1*/
+
+
+.drop-columns {
+  padding-left: 20px;
+}
+
+
+@media screen and (max-width: 899px){
+    .drop-columns{
+        height: 200px;
+        overflow:scroll;
+    }
+}
+
+@media screen and (min-width: 900px){
+    .drop-columns{
+        -moz-column-count:3; /* Firefox */
+        -webkit-column-count:3; /* Safari and Chrome */
+        column-count:3;
+        width: 600px;
+    }
+}

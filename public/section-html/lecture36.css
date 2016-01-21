@@ -1,0 +1,30 @@
+
+body {
+  /*background: #222222;*/
+/*  background: url(wildtextures-old-wood-original-file.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;*/
+
+}
+h1 {
+  color: #ffffff;
+}
+h4 {
+  color: #eeeeee;
+  background: rgba(100,100,100,.7);
+  border: 3px rgba(200,200,200,.2) dashed;
+}
+li {
+  color: #dddddd;
+}
+
+div{
+  background: rgba(100,100,100,.7);
+/*  border-color: #333333;
+  border-width: 3px;
+  border-style: solid
+
+or say
+  */
+  border: 25px rgba(160,160,160,.7) dashed;
+}
