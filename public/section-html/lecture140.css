@@ -1,10 +1,11 @@
 /*lecture140.css*/
 
-body {
+body, html {
   background-color: #232323;
   margin: 0;
   font-family: Nunito, Arial, serif;
   font-weight: 400;
+  overflow: hidden;
 }
 
 #container {
