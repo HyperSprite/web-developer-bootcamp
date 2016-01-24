@@ -1,0 +1,31 @@
+/*lecture133.css*/
+
+img {
+  width: 300px;
+}
+
+.phase1 {
+  background-color: #AACED3;
+}
+
+.phase2 {
+  background-color: #DFE693;
+}
+
+#back-body-swap {
+  border-radius: 8px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  transition-duration: 0.6s;
+
+}
+
+.done {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.selected {
+  color: white;
+}

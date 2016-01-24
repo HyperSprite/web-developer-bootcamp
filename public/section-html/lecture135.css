@@ -1,0 +1,10 @@
+/*lecture135.css*/
+
+.winner {
+  color: white;
+  background-color: green;
+}
+
+span {
+    padding: 5px;
+}

@@ -30,5 +30,5 @@ backBodySwap.addEventListener('click', function() {
 // or
 
 // button.addEventListener('click', function() {
-//   document.body.classList.toggle('purple');
+//   document.body.classList.toggle('phase2');
 // });
