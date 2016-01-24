@@ -12,6 +12,23 @@ backBodySwap.addEventListener('click', function() {
     }
   }
 });
-console.dir('phase > '+ phase);
 
-//document.querySelectorAll('[id^=phase]');
+
+// colts way, way easier.
+// var button = document.querySelector('button');
+// var isPurple = false;
+
+// button.addEventListener('click', function() {
+//   if(isPurple) {
+//     document.body.style.background = 'white';
+//   } else {
+//     document.body.style.background = 'purple';
+//   }
+//   isPurple = !isPurple;
+// });
+
+// or
+
+// button.addEventListener('click', function() {
+//   document.body.classList.toggle('purple');
+// });
