@@ -1,19 +1,50 @@
 // lecture140.js
 
-// note the spaces in he colors, this is
-// this is needed to match what is brought back
-// from the this.style.background
-var colors = generateRandomColors(6);
+var mode = 6;
+var colors = generateRandomColors(mode);
 var squares = document.querySelectorAll('.square');
 var pickedColor = pickColor();
 var colorDisplay = document.getElementById('colorDisplay');
 var messageDisplay = document.querySelector('#message');
 var h1 = document.querySelector('h1');
 var resetButton = document.querySelector('#reset');
+var easyBtn = document.querySelector('#easyBtn');
+var hardBtn = document.querySelector('#hardBtn');
+
+
+easyBtn.addEventListener('click', function() {
+  mode = 3;
+  easyBtn.classList.add('selected');
+  hardBtn.classList.remove('selected');
+  colors = generateRandomColors(mode);
+  pickedColor = pickColor();
+  colorDisplay.textContent = pickedColor;
+  for (var i = 0; i < squares.length; i++) {
+  // add initial colors
+    if (colors[i]) {
+      squares[i].style.background = colors[i];
+    } else {
+      squares[i].style.display = 'none';
+    }
+  }
+});
+
+hardBtn.addEventListener('click', function() {
+  mode = 6;
+  hardBtn.classList.add('selected');
+  easyBtn.classList.remove('selected');
+  colors = generateRandomColors(mode);
+  pickedColor = pickColor();
+  colorDisplay.textContent = pickedColor;
+  for (var i = 0; i < squares.length; i++) {
+      squares[i].style.display = 'block';
+      squares[i].style.background = colors[i];
+  }
+});
 
 resetButton.addEventListener('click', function() {
   // generate all new colors
-  colors = generateRandomColors(6);
+  colors = generateRandomColors(mode);
 
   // reset pickedColor
   pickedColor = pickColor();

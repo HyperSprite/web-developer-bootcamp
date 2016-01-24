@@ -10,6 +10,7 @@ body {
   padding-bottom: 30%;
   float: left;
   margin: 1.66%;
+
 }
 
 #container {
@@ -25,4 +26,8 @@ h1 {
   background-color: #DCDCDC;
   height: 30px;
   text-align: center;
+}
+
+.selected {
+  background: blue;
 }
