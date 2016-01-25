@@ -36,7 +36,7 @@ function randomColor() {
   var hG = g.toString(16);
   var hB = b.toString(16);
   // bundle this up into an object
-  color.hex = `#h${hR + hG + hB}`;
+  color.hex = `#${hR + hG + hB}`;
   color.rgb = `rgb(${r}, ${g}, ${b})`;
   return color;
 }
