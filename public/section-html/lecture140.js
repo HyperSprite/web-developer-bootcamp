@@ -38,7 +38,6 @@ function randomColor() {
   // bundle this up into an object
   color.hex = `#h${hR + hG + hB}`;
   color.rgb = `rgb(${r}, ${g}, ${b})`;
-  console.dir(color);
   return color;
 }
 
