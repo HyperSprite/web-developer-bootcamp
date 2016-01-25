@@ -1,0 +1,16 @@
+/*lecture156.css*/
+
+div {
+  width: 100px;
+  height: 100px;
+  background: teal;
+  border-radius: 10px;
+  text-align: center;
+  margin: 20px;
+  float: left;
+  display: none;
+}
+
+input {
+  width: 80px;
+}
