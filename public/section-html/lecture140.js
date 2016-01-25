@@ -32,9 +32,9 @@ function randomColor() {
   var b = Math.floor(Math.random() * 256);
   // this creates the hex version of the same color
   // this is displayed instead of correct at game end
-  var hR = r.toString(16);
-  var hG = g.toString(16);
-  var hB = b.toString(16);
+  var hR = ('0' + r.toString(16)).slice(-2);
+  var hG = ('0' + g.toString(16)).slice(-2);
+  var hB = ('0' + b.toString(16)).slice(-2);
   // bundle this up into an object
   color.hex = `#${hR + hG + hB}`;
   color.rgb = `rgb(${r}, ${g}, ${b})`;
