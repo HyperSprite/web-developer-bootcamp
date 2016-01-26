@@ -22,13 +22,20 @@ $('ul').on('click', 'span', function(event) {
 $('input[type="text"').keypress(function(event) {
   if (event.which === 13) {
 // HyperSprite: added trim to remove white space on either side of the todo
-    var todoText = $(this).val().trim();
+// HyperSprite: regex cleans up string, removes most non alpha/num chars
+    var todoText = $(this).val().trim().replace(/[^a-z0-9.~_\-,.!?"' ]/gi, '');
 // HyperSprite: checking to make sure there is a todo
 // so we don't make an empty todos by accident
       $(this).val('');
     if (todoText) {
       // adding the new li with span and text
-      $('ul').append('<li><span>X</span> ' + todoText + '</li>');
+      $('ul').prepend('<li><span><i class="fa fa-trash"></i></span> ' + todoText + '</li>');
     }
   }
+});
+
+$('input[type="text"]').fadeToggle(0);
+
+$('.fa-plus-square').click(function() {
+  $('input[type="text"]').fadeToggle(400);
 });

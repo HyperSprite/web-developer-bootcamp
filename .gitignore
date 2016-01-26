@@ -32,3 +32,7 @@ node_modules
 
 # Optional REPL history
 .node_repl_history
+
+# Local files for dev that will be on CDN
+public/projects/assets/vendor
+
