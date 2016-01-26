@@ -1,20 +1,63 @@
 /*lecture160.css*/
 
-body {
+/*used my own colors*/
 
+body {
+  font-family: 'Roboto', sans-serif;
 }
 
 #container {
-  border: 2px solid lightgray;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
   width: 360px;
-  margin: 0 auto;
+  margin: 100px auto;
+  background: #F7F7F7;
 }
 
 h1 {
   text-transform: uppercase;
+  background: #2980E9;
+  color: #EDEDED;
+  margin: 0;
+  padding: 10px 20px;
+  font-size: 24px;
+  font-weight: normal;
 }
 
 .completed {
   color: gray;
   text-decoration: line-through;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  background-color: #FFFFFF;
+  height: 40px;
+  line-height: 40px;
+  color: #666666
+}
+
+li:nth-of-type(2n) {
+  background-color: #F7F7F7;
+}
+
+input {
+  font-size: 18px;
+  color: #EDEDED;
+  background-color: #F7F7F7;
+  width: 100%;
+  padding: 13px 13px 13px 20px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input:focus {
+  background: #FFFFFF;
+  color: #2980E9;
+  border: 3px solid #2980E9;
+  outline: none;
 }
