@@ -5,7 +5,7 @@ body {
 }
 
 #container {
-  background: lightgray;
+  border: 2px solid lightgray;
   width: 360px;
   margin: 0 auto;
 }
@@ -14,4 +14,7 @@ h1 {
   text-transform: uppercase;
 }
 
-
+.completed {
+  color: gray;
+  text-decoration: line-through;
+}
