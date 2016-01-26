@@ -7,21 +7,18 @@
   <script type="text/javascript" src="assets/vendor/paperjs-v0.9.25/dist/paper-full.min.js"></script>
   <!-- Define inlined PaperScript associate it with myCanvas -->
   <script type="text/paperscript" canvas="myCanvas">
-    // Create a Paper.js Path to draw a line into it:
-    var path = new Path();
-    // Give the stroke a color
-    path.strokeColor = 'red';
-    var start = new Point(100, 100);
-    // Move to start and draw a line from there
-    path.moveTo(start);
-    // Note the plus operator on Point objects.
-    // PaperScript does that for us, and much more!
-    path.lineTo(start + [ 100, -75 ]);
-    // Point(x, y, rad )
-    var myCircle = new Path.Circle(new Point(100, 70), 50);
-    myCircle.fillColor = 'black';
-    var myCircle2 = new Path.Circle(new Point(200, 370), 500);
-    myCircle2.fillColor = 'red';
+  var y = 50;
+  var count = 1;
+  for(var i = 0; i < 10; i++) {
+    for(var x = 50; x < 1000; x +=100) {
+      var myCircle2 = new Path.Circle(new Point(x, y), 10);
+      myCircle2.fillColor = 'red';
+      count++;
+      }
+      if (count >= 10) {
+      y+= 100;
+    }
+  }
   </script>
 </head>
 <body>
