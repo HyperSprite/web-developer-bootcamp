@@ -1,0 +1,17 @@
+/*lecture160.css*/
+
+body {
+
+}
+
+#container {
+  background: lightgray;
+  width: 360px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+
