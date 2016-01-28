@@ -1,5 +1,7 @@
 // lecture160.js
-
+// HyperSprite: re is our regex to compair our item input to.
+// HyperSprite: make sure we are not passing anything dangerous in
+var re = /[^a-z0-9.~_\-,.!?@"' ]/gi;
 // we need to go up to an element that is on the page
 // when jQuery loads and then back down to the li
 $('ul').on('click', 'li', function() {
@@ -23,7 +25,8 @@ $('input[type="text"').keypress(function(event) {
   if (event.which === 13) {
 // HyperSprite: added trim to remove white space on either side of the todo
 // HyperSprite: regex cleans up string, removes most non alpha/num chars
-    var todoText = $(this).val().trim().replace(/[^a-z0-9.~_\-,.!?"' ]/gi, '');
+// but leaves inner spaces
+    var todoText = $(this).val().trim().replace(re, '');
 // HyperSprite: checking to make sure there is a todo
 // so we don't make an empty todos by accident
       $(this).val('');
