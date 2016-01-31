@@ -9,12 +9,12 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
-  res.status(200).render('home.ejs');
+  res.status(200).render('home');
 });
 
 app.get('/fellinlovewith/:thing', function(req, res) {
   var thing = req.params.thing;
-  res.status(200).render('love.ejs', {thingVar : thing});
+  res.status(200).render('love', {thingVar : thing});
 });
 
 app.get('/posts', function(req, res) {
@@ -26,7 +26,7 @@ app.get('/posts', function(req, res) {
     {title: 'JShit vs ESlint', author: 'Susy'},
     {title: 'Grunt vs Gulp', author: 'John'},
   ];
-  res.status(200).render('posts.ejs', {posts: posts});
+  res.status(200).render('posts', {posts: posts});
 });
 
 app.get('*', function(req, res) {

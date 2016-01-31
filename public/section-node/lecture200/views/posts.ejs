@@ -1,12 +1,5 @@
 <!-- posts.ejs -->
-<!DOCTYPE html>
-<html>
-<head>
-  <title>The Posts Page</title>
-  <link rel="stylesheet" type="text/css" href="css/app.css">
-</head>
-<body>
-
+<% include partials/header %>
 <h1>The Post Page</h1>
 
 <ul>
@@ -17,8 +10,4 @@
     <li><%= post.title %> - by <strong><%= post.author %></strong></li>
   <% }) %>
 </ul>
-
-
-
-</body>
-</html>
+<% include partials/footer %>

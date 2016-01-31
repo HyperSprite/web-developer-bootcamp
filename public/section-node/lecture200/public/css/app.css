@@ -1,6 +1,10 @@
 /*app.css*/
 
 body {
-  background: 60000;
-  color: ffffff;
+  background: #600000;
+  color: #eeefef;
+}
+
+a {
+  color: #dddede;
 }

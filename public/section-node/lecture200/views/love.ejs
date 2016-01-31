@@ -1,11 +1,5 @@
 <!-- love.ejs -->
-<!DOCTYPE html>
-<html>
-<head>
-  <title>You fell in love with</title>
-</head>
-<body>
-
+<% include partials/header %>
 <h1>You fell in love with <%= thingVar %></h1>
 
 <% if(thingVar.toLowerCase() === 'tacos') { %>
@@ -13,6 +7,4 @@
 <% } else { %>
   <p>You should have picked Tacos!</p>
 <% } %>
-
-</body>
-</html>
+<% include partials/footer %>
