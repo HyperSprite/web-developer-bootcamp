@@ -4,20 +4,26 @@
 <head>
   <title>Patatap Clone</title>
   <link rel="stylesheet" type="text/css" href="assets/css/lecture170.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/1.1.29/howler.js"></script>
   <script type="text/javascript" src="assets/vendor/paperjs-v0.9.25/dist/paper-full.min.js"></script>
+  <script type="text/javascript" src="assets/vendor/sound-data.js"></script>
   <!-- Define inlined PaperScript associate it with myCanvas -->
   <script type="text/paperscript" canvas="myCanvas">
+
   var circles = [];
 
     function onKeyDown(event) {
-      var maxPoint = new Point(view.size.width, view.size.height);
-      // HyperSprite: added responsive circle size based on screen size
-      var circleSize = (view.size.width + view.size.height)/4;
-      var randomPoint = Point.random();
-      var point = maxPoint * randomPoint;
-      var newCircle = new Path.Circle(point, circleSize);
-      newCircle.fillColor = 'red';
-      circles.push(newCircle);
+      if(data[event.key]) {
+        var maxPoint = new Point(view.size.width, view.size.height);
+        var randomPoint = Point.random();
+        var point = maxPoint * randomPoint;
+        // HyperSprite: added responsive circle size based on screen size
+        var circleSize = (view.size.width + view.size.height)/4;
+        var newCircle = new Path.Circle(point, circleSize);
+        newCircle.fillColor = data[event.key].color;
+        data[event.key].sound.play();
+        circles.push(newCircle);
+      }
     }
 
     function onFrame(event) {
@@ -30,8 +36,6 @@
   </script>
 </head>
 <body>
-
-
 
 <canvas id="myCanvas" resize></canvas>
 <!-- sounds from https://github.com/jonobr1/Neuronal-Synchrony -->
