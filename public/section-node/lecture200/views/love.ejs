@@ -7,5 +7,12 @@
 <body>
 
 <h1>You fell in love with <%= thingVar %></h1>
+
+<% if(thingVar.toLowerCase() === 'tacos') { %>
+  <p>Tacos are great?</p>
+<% } else { %>
+  <p>You should have picked Tacos!</p>
+<% } %>
+
 </body>
 </html>

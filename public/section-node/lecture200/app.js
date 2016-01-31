@@ -16,6 +16,18 @@ app.get('/fellinlovewith/:thing', function(req, res) {
   res.status(200).render('love.ejs', {thingVar : thing});
 });
 
+app.get('/posts', function(req, res) {
+  var posts = [
+    {title: 'First Post', author: 'Susy'},
+    {title: 'Battle of the JS libs and frameworks', author: 'John'},
+    {title: 'Hmm, EJS vs Handlebars', author: 'John'},
+    {title: 'Angular vs React', author: 'Susy'},
+    {title: 'JShit vs ESlint', author: 'Susy'},
+    {title: 'Grunt vs Gulp', author: 'John'},
+  ];
+  res.status(200).render('posts.ejs', {posts: posts});
+});
+
 app.get('*', function(req, res) {
   res.status(404).send('Error 404: page not found');
 });
