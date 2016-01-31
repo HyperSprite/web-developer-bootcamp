@@ -5,6 +5,7 @@ const app = express();
 const appIP = process.env.IP || '127.0.0.1';
 const appPort = process.env.PORT || 3030;
 
+app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
