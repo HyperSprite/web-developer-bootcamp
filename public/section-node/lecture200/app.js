@@ -1,5 +1,6 @@
 // lecture200 app.js
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
 const appIP = process.env.IP || '127.0.0.1';
@@ -7,6 +8,7 @@ const appPort = process.env.PORT || 3030;
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', function(req, res) {
   res.status(200).render('home');
@@ -14,9 +16,20 @@ app.get('/', function(req, res) {
 
 app.get('/fellinlovewith/:thing', function(req, res) {
   var thing = req.params.thing;
-  res.status(200).render('love', {thingVar : thing});
+  res.status(200).render('love', {thingVar: thing});
 });
 
+var friends = ['Tony', 'Jane', 'John', 'Tim', 'Carol'];
+
+app.get('/friends', function(req, res) {
+  res.status(200).render('friends', {friends: friends});
+});
+
+app.post('/addfriend', function(req, res) {
+  var newFriend = req.body.newFriend;
+  friends.push(newFriend);
+  res.status(302).redirect('/friends');
+});
 app.get('/posts', function(req, res) {
   var posts = [
     {title: 'First Post', author: 'Susy'},
