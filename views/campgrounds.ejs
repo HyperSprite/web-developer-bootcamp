@@ -1,0 +1,12 @@
+<% include partials/header %>
+<!-- index.ejs -->
+<h1>YelpCamp</h1>
+
+<% campgrounds.forEach(function(camp) { %>
+  <div class="camp">
+  <h4><%= camp.name %></h4>
+  <img src="<%= camp.image %>">
+<% }); %>
+
+<!-- /index.ejs -->
+<%include partials/footer %>

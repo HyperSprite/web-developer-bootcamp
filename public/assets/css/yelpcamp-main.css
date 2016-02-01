@@ -1,0 +1,10 @@
+/* /assets/css/yelpcamp-main.css */
+
+body {
+  background-color: #eeeeee;
+}
+
+div.camp {
+  width: 32%;
+  margin: 1.2%;
+}

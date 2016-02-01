@@ -1,7 +1,7 @@
 body {
   background: #eeeeee;
 }
-li {
+/*li {
   border: 2px solid red;
 }
 #third-li {
@@ -10,4 +10,13 @@ li {
 }
 .completed {
   text-decoration: line-through;
+}*/
+
+input[type=checkbox] + label {
+  color: #ccc;
+  font-style: italic;
+}
+input[type=checkbox]:checked + label {
+  color: #f00;
+  font-style: normal;
 }

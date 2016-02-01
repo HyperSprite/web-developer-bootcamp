@@ -1,0 +1,24 @@
+{
+  "name": "web-developer-bootcamp",
+  "version": "1.0.0",
+  "description": "Following Colt Steele's class on Udemy. Looking for a modern refresher and putting my own spin on some of the projects like callbacks (node lecture114.js) and arrow functions (node lecture121.js).",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HyperSprite/web-developer-bootcamp.git"
+  },
+  "author": "HyperSprite",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HyperSprite/web-developer-bootcamp/issues"
+  },
+  "homepage": "https://github.com/HyperSprite/web-developer-bootcamp#readme",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4"
+  }
+}
