@@ -1,11 +1,10 @@
 /* /assets/css/yelpcamp-main.css */
 
 body {
-  background-color: #eeeeee;
+
 }
 
-img {
-  width: 30%;
-  float: left;
-  margin: 1.66%;
+div.row {
+  display: flex;
+  flex-wrap: wrap;
 }

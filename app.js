@@ -11,14 +11,22 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 
   var campgrounds = [
-    {name: 'Camp Coffee', image: 'https://images.unsplash.com/photo-1414016642750-7fdd78dc33d9'},
-    {name: 'Rocky Vista', image: 'https://images.unsplash.com/uploads/14131591236686822d392/95b6ec26'},
-    {name: 'Wetlands Park', image: 'https://images.unsplash.com/uploads/1412026213666b9983de0/767f037f'},
-    {name: 'Bench and Trees Only', image: 'https://images.unsplash.com/photo-1444492417251-9c84a5fa18e0'},
-    {name: 'Foggy Grove Park', image: 'https://images.unsplash.com/reserve/6lOsliXXTFmk4UHwTJZn_Store%20Mosse%20Nationalpark-4.jpg'},
-    {name: 'High Mountain Lake', image: 'https://images.unsplash.com/photo-1447755331191-00f75c66befc'},
-    {name: 'Vista View Valley', image: 'https://images.unsplash.com/photo-1418225043143-90858d2301b4'},
-    {name: 'Grass Lands Camp Ground', image: 'https://images.unsplash.com/photo-1445207966278-0a0a65a2047b'},
+    {name: 'Olmsted Point', image: 'http://hypersprite.com/blog/wp-content/uploads/2013/08/HS_6971-Edit.jpg'},
+    {name: 'Bodie Ghost Town', image: 'http://hypersprite.com/blog/wp-content/uploads/2013/08/HS_6250_HDR_ps.jpg'},
+    {name: 'Hetch Hetchy  Reservoir', image: 'http://hypersprite.com/blog/wp-content/uploads/2012/08/HS0417_18_19_20.jpg'},
+    {name: 'Middle of Lombard Street', image: 'http://hypersprite.com/blog/wp-content/uploads/2011/05/MG_0879.jpg'},
+    {name: 'Olmsted Point', image: 'http://hypersprite.com/blog/wp-content/uploads/2013/08/HS_6971-Edit.jpg'},
+    {name: 'Bodie Ghost Town', image: 'http://hypersprite.com/blog/wp-content/uploads/2013/08/HS_6250_HDR_ps.jpg'},
+    {name: 'Hetch Hetchy  Reservoir', image: 'http://hypersprite.com/blog/wp-content/uploads/2012/08/HS0417_18_19_20.jpg'},
+    {name: 'Middle of Lombard Street', image: 'http://hypersprite.com/blog/wp-content/uploads/2011/05/MG_0879.jpg'},
+    {name: 'Olmsted Point', image: 'http://hypersprite.com/blog/wp-content/uploads/2013/08/HS_6971-Edit.jpg'},
+    {name: 'Bodie Ghost Town', image: 'http://hypersprite.com/blog/wp-content/uploads/2013/08/HS_6250_HDR_ps.jpg'},
+    {name: 'Hetch Hetchy  Reservoir', image: 'http://hypersprite.com/blog/wp-content/uploads/2012/08/HS0417_18_19_20.jpg'},
+    {name: 'Middle of Lombard Street', image: 'http://hypersprite.com/blog/wp-content/uploads/2011/05/MG_0879.jpg'},
+    {name: 'Olmsted Point', image: 'http://hypersprite.com/blog/wp-content/uploads/2013/08/HS_6971-Edit.jpg'},
+    {name: 'Bodie Ghost Town', image: 'http://hypersprite.com/blog/wp-content/uploads/2013/08/HS_6250_HDR_ps.jpg'},
+    {name: 'Hetch Hetchy  Reservoir', image: 'http://hypersprite.com/blog/wp-content/uploads/2012/08/HS0417_18_19_20.jpg'},
+    {name: 'Middle of Lombard Street', image: 'http://hypersprite.com/blog/wp-content/uploads/2011/05/MG_0879.jpg'},
   ];
 
 app.get('/', function(req, res) {
