@@ -2,10 +2,12 @@
 <!-- index.ejs -->
 <h1>YelpCamp</h1>
 
+<a href="/campgrounds/new">Add new Campground</a>
 <% campgrounds.forEach(function(camp) { %>
   <div class="camp">
-  <h4><%= camp.name %></h4>
-  <img src="<%= camp.image %>">
+    <h4><%= camp.name %></h4>
+    <img src="<%= camp.image %>">
+  </div>
 <% }); %>
 
 <!-- /index.ejs -->

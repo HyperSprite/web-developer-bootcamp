@@ -4,7 +4,8 @@ body {
   background-color: #eeeeee;
 }
 
-div.camp {
-  width: 32%;
-  margin: 1.2%;
+img {
+  width: 30%;
+  float: left;
+  margin: 1.66%;
 }
