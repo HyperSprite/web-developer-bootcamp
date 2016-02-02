@@ -2,9 +2,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-
-mongoose.connect('mongodb://localhost/yelpcamp/');
-
 const app = express();
 const appIP = process.env.IP || '127.0.0.1';
 const appPORT = process.env.PORT || 3030;
@@ -13,18 +10,20 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 
+mongoose.connect('mongodb://localhost/yelpcamp/');
 
 // schema setup
 const campgroundSchema = new mongoose.Schema({
   name: 'String',
   image: 'String',
+  description: 'String',
 });
 
 const Campground = mongoose.model('Campground', campgroundSchema);
 
 
 app.get('/', function(req, res) {
-  res.status(200).render('index');
+  res.status(200).render('home');
 });
 
 app.get('/campgrounds', function(req, res) {
@@ -32,26 +31,37 @@ app.get('/campgrounds', function(req, res) {
     if (err) {
       console.log(err);
     } else {
-      res.status(200).render('campgrounds', {campgrounds: campgrounds});
+      res.status(200).render('index', {campgrounds: campgrounds});
     }
   });
 });
 
 app.get('/campgrounds/new', function(req, res) {
-  res.status(200).render('campgrounds-new');
+  res.status(200).render('new');
 });
 
 app.post('/campgrounds', function(req, res) {
   var data = {
     name: req.body.name,
     image: req.body.image,
+    description: req.body.description,
   };
   Campground.create(data, function(err, cb) {
     if (err) {
       console.log(err);
     } else {
       console.log(cb);
-      res.status(302).redirect('/campgrounds');
+      res.status(302).redirect('/campgrounds/' + cb._id);
+    }
+  });
+});
+
+app.get('/campgrounds/:id', function(req, res) {
+  Campground.findById({_id: req.params.id}, function(err, campground) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.status(200).render('show',  {campground: campground} );
     }
   });
 });
