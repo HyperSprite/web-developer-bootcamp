@@ -1,0 +1,22 @@
+<% include ./partials/header %>
+<!-- blog-new.ejs -->
+
+  <div class="ui huge header">New Blog</div>
+  <form class="ui form" action="/blog" method="POST">
+  <div class="field">
+  <label>Title</label>
+  <input type="text" name="blog[title]" placeholer="title">
+  </div>
+  <div class="field">
+  <label>Image URL</label>
+  <input type="text" name="blog[image]" placeholer="image">
+  </div>
+  <div class="field">
+  <label>Description</label>
+  <textarea name="blog[body]" placeholer="Add content here"></textarea>
+  </div>
+  <button class="ui green button" type="submit">Save!</button>
+</form>
+
+<!-- /blog-new.ejs -->
+<% include ./partials/footer %>

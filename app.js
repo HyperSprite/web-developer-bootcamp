@@ -2,6 +2,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const Campground = require('./models/campground');
+const Comment = require('./models/comment');
+const seedDB = require('./seeds');
+
 const app = express();
 const appIP = process.env.IP || '127.0.0.1';
 const appPORT = process.env.PORT || 3030;
@@ -12,14 +16,7 @@ app.set('view engine', 'ejs');
 
 mongoose.connect('mongodb://localhost/yelpcamp/');
 
-// schema setup
-const campgroundSchema = new mongoose.Schema({
-  name: 'String',
-  image: 'String',
-  description: 'String',
-});
-
-const Campground = mongoose.model('Campground', campgroundSchema);
+seedDB();
 
 
 app.get('/', function(req, res) {
@@ -57,7 +54,7 @@ app.post('/campgrounds', function(req, res) {
 });
 
 app.get('/campgrounds/:id', function(req, res) {
-  Campground.findById({_id: req.params.id}, function(err, campground) {
+  Campground.findById({_id: req.params.id}).populate('comments').exec(function(err, campground) {
     if (err) {
       console.log(err);
     } else {
@@ -65,6 +62,8 @@ app.get('/campgrounds/:id', function(req, res) {
     }
   });
 });
+
+
 
 app.get('*', function(req, res) {
   res.status(404).send('Error 404: Page not found');
