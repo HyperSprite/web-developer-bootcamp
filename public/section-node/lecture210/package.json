@@ -1,0 +1,12 @@
+{
+  "name": "cats",
+  "version": "0.0.0",
+  "description": "class.",
+  "main": "cats.js",
+  "repository": "",
+  "author": "",
+  "dependencies": {
+    "mongoose": "^4.3.7",
+    "verror": "^1.6.1"
+  }
+}
