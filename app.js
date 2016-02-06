@@ -2,9 +2,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const passport = require('passport');
+const LocalStratagy = require('passport-local');
 const Campground = require('./models/campground');
 const Comment = require('./models/comment');
+const User = require('./models/user.js');
 const seedDB = require('./seeds');
+
+
+
 
 const app = express();
 const appIP = process.env.IP || '127.0.0.1';
