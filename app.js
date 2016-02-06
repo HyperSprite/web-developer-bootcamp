@@ -28,7 +28,7 @@ app.get('/campgrounds', function(req, res) {
     if (err) {
       console.log(err);
     } else {
-      res.status(200).render('index', {campgrounds: campgrounds});
+      res.status(200).render('campground/index', {campgrounds: campgrounds});
     }
   });
 });
@@ -58,12 +58,40 @@ app.get('/campgrounds/:id', function(req, res) {
     if (err) {
       console.log(err);
     } else {
-      res.status(200).render('show',  {campground: campground} );
+      res.status(200).render('campground/show', {campground: campground} );
     }
   });
 });
 
+// Comment new/cerate
+// add the new and create routes
+// add new comment form
 
+app.get('/campgrounds/:id/comment/new', function(req, res) {
+  Campground.findById(req.params.id, function(err, campground) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.status(200).render('comment/new', {campground: campground});
+    }
+  });
+});
+
+app.post('/campgrounds/:id/comment', function(req, res) {
+  Comment.create(req.body.data, function(err, cComm) {
+    if (err) {
+      console.log(err);
+      res.status(303).redirect('/campgrounds');
+    } else {
+      Campground.findById(req.body.data._id, function(err, cCamp) {
+        cCamp.comments.push(cComm);
+        cCamp.save();
+        console.log('comment saved');
+      });
+      res.status(303).redirect('/campgrounds/' + req.body.data._id);
+    }
+  });
+});
 
 app.get('*', function(req, res) {
   res.status(404).send('Error 404: Page not found');

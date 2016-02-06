@@ -1,4 +1,4 @@
-<% include partials/header %>
+<% include ../partials/header %>
 <!-- show.ejs -->
 
 <h1><%= campground.name %></h1>
@@ -13,6 +13,7 @@
 <p>Author: <%= comment.author %></p>
 <% }) %>
 </div>
+<a class="btn btn-success" href="/campgrounds/<%= campground._id %>/comment/new">New Comment</a>
 
 <!-- /show.ejs -->
-<%include partials/footer %>
+<%include ../partials/footer %>
