@@ -25,9 +25,13 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/">Login</a></li>
-        <li><a href="/">Signup</a></li>
-        <li><a href="/">Something else here</a></li>
+      <% if(!currentUser) { %>
+        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="/register"><span class="glyphicon glyphicon-pencil"></span> Sign up</a></li>
+      <% } else { %>
+        <li><a href="#">Signed in as <%= currentUser.username %></a></li>
+        <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> logout</a></li>
+        <% } %>
       </ul>
     </div><!-- /.navbar-collapse -->
     </div>
