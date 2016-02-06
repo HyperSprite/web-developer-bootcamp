@@ -10,7 +10,7 @@ const app = express();
 const appIP = process.env.IP || '127.0.0.1';
 const appPORT = process.env.PORT || 3030;
 
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 
@@ -80,15 +80,15 @@ app.get('/campgrounds/:id/comment/new', function(req, res) {
 app.post('/campgrounds/:id/comment', function(req, res) {
   Comment.create(req.body.data, function(err, cComm) {
     if (err) {
-      console.log(err);
+      console.log('Comment.create ' + err);
       res.status(303).redirect('/campgrounds');
     } else {
-      Campground.findById(req.body.data._id, function(err, cCamp) {
+      Campground.findById(req.params.id, function(err, cCamp) {
         cCamp.comments.push(cComm);
         cCamp.save();
         console.log('comment saved');
       });
-      res.status(303).redirect('/campgrounds/' + req.body.data._id);
+      res.status(303).redirect('/campgrounds/' + req.body.data.campground_id);
     }
   });
 });

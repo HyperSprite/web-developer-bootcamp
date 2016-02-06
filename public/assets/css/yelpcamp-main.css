@@ -4,6 +4,22 @@ body {
 
 }
 
+.thumbnail img {
+  width: 100%;
+}
+
+.thumbnail {
+  padding: 0;
+  border-radius: 10px;
+}
+
+/*.big-img {
+  width: auto;
+  max-width: 400px;
+  height: auto;
+  max-height: 300px;
+}*/
+
 div.row {
   display: flex;
   flex-wrap: wrap;
@@ -11,4 +27,8 @@ div.row {
 
 .footer {
   background-color: #ededed;
+}
+
+.thumbnail .caption-full {
+  padding: 9px;
 }
