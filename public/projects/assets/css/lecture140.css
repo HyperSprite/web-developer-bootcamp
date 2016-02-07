@@ -9,8 +9,8 @@ body, html {
 }
 
 #container {
-  max-width: 600px;
-  margin: 20px auto;
+  max-width: 650px;
+  margin: 10px auto;
 }
 
 h1 {
@@ -26,6 +26,13 @@ h1 {
 
 #colorDisplay {
   font-size: 200%;
+}
+
+#score {
+  display: inline-block;
+  width: 16%;
+  color: #4682B4;
+  text-transform: uppercase;
 }
 
 #message {
