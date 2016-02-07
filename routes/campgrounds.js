@@ -21,7 +21,7 @@ router.get('/new', isLoggedIn, function(req, res) {
 });
 
 // POST CREATE /////////////////////////////////////
-router.post('/', function(req, res) {
+router.post('/', isLoggedIn, function(req, res) {
   var data = {
     name: req.body.name,
     image: req.body.image,

@@ -23,6 +23,11 @@ router.post('/', isLoggedIn, function(req, res) {
       console.log('Comment.create ' + err);
       res.status(303).redirect('/campgrounds');
     } else {
+      // add username and id
+      cComm.author.id = req.user._id;
+      cComm.author.username = req.user.username;
+      console.log('user' + req.user.username);
+      cComm.save();
       Campground.findById(req.params.id, function(err, cCamp) {
         cCamp.comments.push(cComm);
         cCamp.save();

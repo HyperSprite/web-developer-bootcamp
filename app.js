@@ -37,7 +37,7 @@ passport.use(new LocalStratagy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-seedDB();
+// seedDB();
 
 // MIDDLEWARE FOR LOGGED IN USER /////////////////
 app.use(function(req, res, next) {
