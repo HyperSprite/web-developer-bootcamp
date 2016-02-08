@@ -105,7 +105,7 @@ function checkCampgroundOwnership(req, res, next) {
         res.status(302).redirect('back');
       } else {
         if (fCampground.author.id.equals(req.user._id)) {
-         next();
+          next();
         } else {
           res.status(302).redirect('back');
         }
