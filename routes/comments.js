@@ -70,6 +70,7 @@ router.delete('/:comment_id', middleware.checkCommentOwner, function(req, res) {
       console.log(err);
       res.status(302).redirect('back');
     } else {
+      req.flash('success', 'Comment deleted.')
       res.status(302).redirect('/campgrounds/' + req.params.id);
     }
   });

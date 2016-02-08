@@ -39,4 +39,16 @@
 </nav>
 </div>
 <div class="container">
+<% if (error && error.length > 0) { %>
+  <div class="alert alert-danger" role="alert">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <h5><strong>Error</strong> <%= error %></h5>
+  </div>
+<% } else if (success && success.length > 0) { %>
+  <div class="alert alert-success" role="alert">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <h5><strong>Success</strong> <%= success %></h5>
+</div>
+
+<% } %>
 <!-- /header.ejs -->
