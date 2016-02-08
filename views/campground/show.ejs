@@ -16,7 +16,13 @@
         <h4 class="pull-right">$9.00/night</h4>
         <h4><a href="#"><%= campground.name %></a>
         <p><%= campground.description %></p>
-        <p><em>Submitted By: <%= campground.author.username %></em>
+        <p><em>Submitted By: <%= campground.author.username %></em></p>
+        <% if (currentUser && campground.author.id.equals(currentUser._id)) { %>
+        <a class="btn btn-warning" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
+        <form class="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+        <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+        <% } %>
       </div>
     </div>
     <div class="well">

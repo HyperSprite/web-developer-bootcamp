@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const LocalStratagy = require('passport-local');
+const methodOverride = require('method-override');
 const Campground = require('./models/campground');
 const Comment = require('./models/comment');
 const User = require('./models/user.js');
@@ -22,6 +23,7 @@ const appPORT = process.env.PORT || 3030;
 mongoose.connect('mongodb://localhost/yelpcamp/');
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
 
 // PASSPORT //////////////////////////////////////

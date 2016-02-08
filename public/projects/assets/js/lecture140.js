@@ -1,8 +1,8 @@
 // lecture140.js
-
-var scoreCount = 1;
 var done = false;
 var mode = 6;
+var scoreCount = 1;
+var scoreSpiral = 6;
 var colors = [];
 var pickedColor;
 var squares = document.querySelectorAll('.square');
@@ -71,6 +71,7 @@ function reset() {
     scoreCount -= 1;
   }
   scoreDisplay.textContent = scoreCount;
+  scoreSpiral = mode;
   done = false;
 }
 
@@ -96,15 +97,14 @@ function setupSquares() {
         resetButton.textContent = 'Play Again?';
         h1.style.background = pickedColor.rgb;
         if (!done) {
-          scoreCount += mode;
+          scoreCount += scoreSpiral;
           scoreDisplay.textContent = scoreCount;
         }
         done = true;
       } else {
         this.style.background = '#232323';
-        scoreCount -= 2;
-        scoreDisplay.textContent = scoreCount;
         messageDisplay.textContent = 'Try Again';
+        scoreSpiral -= 2;
       }
     });
   }
