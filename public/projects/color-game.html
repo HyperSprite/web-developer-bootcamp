@@ -7,16 +7,19 @@
   <link href='https://fonts.googleapis.com/css?family=Nunito:700,400,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<h1>The Great <br><span id='colorDisplay'>RGB</span><br> Color Game</h1>
+<h1>The Great Color Game<br><span id='colorDisplay'>RGB</span><br>Score:<span id="score"></span></h1>
 
 <div id="stripe">
   <button id="reset">New Colors</button>
-  <span id="score"></span>
   <span id="message"></span>
   <button class="mode">Easy</button>
   <button class='mode selected'>Hard</button>
 </div>
-
+<div id="stripe">
+   <button class="play">Correct +<span class="scoUp"></span></button>
+   <button class="play">Incorrect -<span class="scoDwn"></span></button>
+   <button class="play">Reset -<span class="scoRst"></span></button>
+</div>
  <div id="container">
    <div class="square"></div>
    <div class="square"></div>
@@ -25,6 +28,8 @@
    <div class="square"></div>
    <div class="square"></div>
  </div>
+
+
 <script type="text/javascript" src="assets/js/lecture140.js"></script>
 </body>
 </html>

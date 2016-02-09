@@ -1,8 +1,9 @@
 // lecture140.js
 var done = false;
 var mode = 6;
-var scoreCount = 1;
-var scoreSpiral = 6;
+var scoreCount = 30;
+var scoreSpiral = 1;
+var scoreValue = 6;
 var colors = [];
 var pickedColor;
 var squares = document.querySelectorAll('.square');
@@ -12,6 +13,9 @@ var scoreDisplay = document.querySelector('#score');
 var h1 = document.querySelector('h1');
 var resetButton = document.querySelector('#reset');
 var modeButtons = document.querySelectorAll('.mode');
+var spanScoUp = document.querySelector('.scoUp');
+var spanScoDwn = document.querySelector('.scoDwn');
+var spanScoRst = document.querySelector('.scoRst');
 
 function changeColors() {
   // loop through all colors
@@ -68,10 +72,14 @@ function reset() {
   messageDisplay.textContent = '';
   resetButton.textContent = 'New Colors?';
   if (!done) {
-    scoreCount -= 1;
+    scoreCount -= scoreValue * 5;
   }
   scoreDisplay.textContent = scoreCount;
-  scoreSpiral = mode;
+  scoreSpiral = 1;
+  scoreValue = mode;
+  spanScoUp.textContent = scoreValue * 10;
+  spanScoDwn.textContent = scoreSpiral * 10;
+  spanScoRst.textContent = scoreValue * 5;
   done = false;
 }
 
@@ -97,14 +105,23 @@ function setupSquares() {
         resetButton.textContent = 'Play Again?';
         h1.style.background = pickedColor.rgb;
         if (!done) {
-          scoreCount += scoreSpiral;
+          scoreCount += scoreValue * 10;
           scoreDisplay.textContent = scoreCount;
+          spanScoUp.textContent = scoreValue * 10;
+          spanScoDwn.textContent = scoreSpiral * 10;
+          spanScoRst.textContent = scoreValue * 5;
         }
         done = true;
       } else {
         this.style.background = '#232323';
         messageDisplay.textContent = 'Try Again';
-        scoreSpiral -= 2;
+        scoreCount -= scoreSpiral * 10;
+        scoreSpiral += 1;
+        scoreValue -= 1;
+        scoreDisplay.textContent = scoreCount;
+        spanScoUp.textContent = scoreValue * 10;
+        spanScoDwn.textContent = scoreSpiral * 10;
+        spanScoRst.textContent = scoreValue * 5;
       }
     });
   }
@@ -117,7 +134,6 @@ function init() {
 }
 
 init();
-
 resetButton.addEventListener('click', function() {
   reset();
 });
